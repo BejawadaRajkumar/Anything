@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@400;500;600&display=swap">
+  <style>
+    /* Your existing CSS code goes here */
+
+    /* Add a new class for the download button */
+    .download-button {
+      position: fixed;
+      bottom: 580px;
+      right: 500px;
+      background-color: var(--blue);
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <main id="board">
+    <!-- Your existing HTML and CSS code goes here -->
+  </main>
+
+  <!-- Add the html2canvas library -->
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
+  <!-- Add a download button with an onclick event -->
+  <button class="download-button" onclick="downloadBoard()">Download Your DashBoard</button>
+
+  <script>
+    function downloadBoard() {
+      // Use html2canvas to capture the content of the board
+      html2canvas(document.getElementById('board')).then(canvas => {
+        // Convert the canvas to data URL
+        var dataURL = canvas.toDataURL('image/png');
+
+        // Create a download link and trigger a click event to download the image
+        var a = document.createElement('a');
+        a.href = dataURL;
+        a.download = 'board_output.png';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+      });
+    }
+  </script>
+</body>
+</html>
