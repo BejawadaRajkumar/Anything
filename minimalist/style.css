@@ -1,0 +1,103 @@
+/* 1. Minimal Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 2. Body & Typography */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.7;
+    background-color: #ffffff;
+    color: #222222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+/* 3. Layout */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    /* Initial state for JS fade-in */
+    opacity: 0;
+    transition: opacity 0.8s ease-in;
+}
+
+/* 4. Content Styling */
+header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+header p {
+    font-size: 1rem;
+    color: #888;
+    margin-top: 0.25rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+blockquote {
+    font-style: italic;
+    color: #666;
+    margin: 2rem 0;
+    padding-left: 1.5rem;
+    border-left: 3px solid #eeeeee;
+}
+
+cite {
+    display: block;
+    margin-top: 0.5rem;
+    font-style: normal;
+    color: #888;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0.5rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+    position: relative;
+}
+
+/* Custom minimal bullet */
+li::before {
+    content: "–";
+    position: absolute;
+    left: -1.2rem;
+    color: #999;
+}
+
+footer {
+    text-align: center;
+    margin-top: 4rem;
+    font-size: 0.9rem;
+    color: #aaaaaa;
+}
